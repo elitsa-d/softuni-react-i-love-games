@@ -4,6 +4,7 @@ import Home from "./components/home/Home";
 import { Routes } from "react-router";
 import { Route } from "react-router";
 import Catalog from "./components/catalog/Catalog";
+import Details from "./components/details/Details";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/games" element={<Catalog />}></Route>
+        <Route path="games/:gameId/details" element={<Details />}></Route>
       </Routes>
       <Footer />
     </>

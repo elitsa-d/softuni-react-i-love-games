@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Game from "../game/Game";
+import Game from "../game-card/GameCard";
 
 export default function Home() {
   const [latestGames, setLatestGames] = useState([]);

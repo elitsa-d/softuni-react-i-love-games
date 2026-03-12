@@ -1,0 +1,9 @@
+- Create root level client and server folders
+- Copy softuni-practice-server into server directory
+- Create react base project inside client folder "npm create vite ."
+- Add resources
+- Add react-router 'npm i react-router'
+- Copy html from template index.html into App.jsx
+- Extract homepage components (Header, Home, Footer)
+- Setup react-router "npm i react-router"
+- Add BrowserRouter Component

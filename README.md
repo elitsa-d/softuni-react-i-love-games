@@ -9,3 +9,4 @@
 - Add BrowserRouter Component
 - Add Routes
 - Dynamic Navigation
+- Dynamic catalog

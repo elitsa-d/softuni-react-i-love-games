@@ -10,3 +10,4 @@
 - Add Routes
 - Dynamic Navigation
 - Dynamic catalog
+- Dynamic Home Latest Games

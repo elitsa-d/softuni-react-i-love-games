@@ -1,4 +1,7 @@
 export default function Game({ _id, genre, title, imageUrl }) {
+  {
+    console.log(1);
+  }
   return (
     <div className="game">
       <img src={imageUrl} alt={title} />

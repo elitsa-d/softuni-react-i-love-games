@@ -1,13 +1,10 @@
-import { useState } from "react";
-
-export default function Register() {
-  const [user, setUser] = useState(null);
-
+export default function Register({ user, onRegister }) {
   const registerSubmit = (formData) => {
     const email = formData.get("email");
     const password = formData.get("password");
     const confirmPassword = formData.get("confirm-password");
 
+    //Validation
     if (!email || !password) {
       return alert("Email and password are required.");
     }
@@ -16,7 +13,8 @@ export default function Register() {
       return alert("Password mismatch");
     }
 
-    setUser({ email });
+    //Register User
+    onRegister(email);
   };
 
   return (

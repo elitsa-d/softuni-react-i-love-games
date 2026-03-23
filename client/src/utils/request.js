@@ -7,15 +7,15 @@ export default async function request(url, method, data) {
 
   if (data) {
     options.headers = {
-      "cotnent-type": "application/json",
+      "Content-Type": "application/json",
     };
 
     options.body = JSON.stringify(data);
   }
 
-  const response = await fetch(url);
-  console.log(response);
+  const response = await fetch(url, options);
   const result = await response.json();
+  debugger;
 
   if (!response.ok) {
     throw result;

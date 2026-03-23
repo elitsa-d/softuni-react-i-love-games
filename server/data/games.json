@@ -42,11 +42,10 @@
   "3627012d-1425-4f34-9d3e-8b2cf3d1e15d": {
     "title": "Satisfactory",
     "genre": "Factory simulation, sandbox",
-    "activePlayers": "263000",
+    "players": 263000,
     "date": "2024-09-10",
     "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.epicgames.com%2Foffer%2Fcrab%2FEGS_Satisfactory_CoffeeStainStudios_S1_2560x1440-a28675eb191db0d8fbcab17f0a1bbed5&f=1&nofb=1&ipt=aa155d61d367adc992b1e3aa90edda8e42be799e62ff094672d3d9089f64fea6",
     "summary": "Satisfactory is a first-person open-world factory building game with a dash of exploration and combat. Play alone or with friends, explore an alien planet, create multi-story factories, and enter conveyor belt heaven!",
-    "players": null,
     "_createdOn": 1773652240069,
     "_id": "3627012d-1425-4f34-9d3e-8b2cf3d1e15d"
   }

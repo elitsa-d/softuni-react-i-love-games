@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import request from "../../utils/request";
 
 export default function GameCreate() {
   const navigate = useNavigate();
@@ -16,6 +17,8 @@ export default function GameCreate() {
       "POST",
       data,
     );
+
+    debugger;
 
     navigate("/games");
   };
@@ -50,8 +53,8 @@ export default function GameCreate() {
             <label htmlFor="players">Active Players:</label>
             <input
               type="number"
-              id="activePlayers"
-              name="activePlayers"
+              id="players"
+              name="players"
               min="0"
               placeholder="0"
             />

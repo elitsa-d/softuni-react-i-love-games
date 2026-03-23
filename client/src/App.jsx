@@ -6,6 +6,7 @@ import { Route } from "react-router";
 import Catalog from "./components/catalog/Catalog";
 import Details from "./components/details/Details";
 import GameCreate from "./components/game-create/GameCreate";
+import Register from "./components/register/Register";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/games" element={<Catalog />}></Route>
         <Route path="games/:gameId/details" element={<Details />}></Route>
         <Route path="/games/create" element={<GameCreate />}></Route>
+        <Route path="/register" element={<Register />}></Route>
       </Routes>
       <Footer />
     </>

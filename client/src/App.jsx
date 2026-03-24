@@ -50,7 +50,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/games" element={<Catalog />}></Route>
-        <Route path="games/:gameId/details" element={<Details />}></Route>
+        <Route
+          path="games/:gameId/details"
+          element={<Details user={user} />}
+        ></Route>
         <Route path="games/:gameId/edit" element={<Edit />}></Route>
         <Route path="/games/create" element={<GameCreate />}></Route>
         <Route

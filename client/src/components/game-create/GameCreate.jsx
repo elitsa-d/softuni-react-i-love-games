@@ -18,8 +18,6 @@ export default function GameCreate() {
       data,
     );
 
-    debugger;
-
     navigate("/games");
   };
 

@@ -17,10 +17,14 @@ export default function Register({ onRegister }) {
       return alert("Password mismatch");
     }
 
-    //Register User
-    onRegister(email);
+    try {
+      //Register User
+      onRegister(email, password);
 
-    navigate("/");
+      navigate("/");
+    } catch (err) {
+      alert(err.message);
+    }
   };
 
   return (

@@ -8,13 +8,30 @@ import Details from "./components/details/Details";
 import GameCreate from "./components/game-create/GameCreate";
 import Register from "./components/register/Register";
 import { useState } from "react";
+import Login from "./components/login/Login";
 
 function App() {
+  const [registeredUsers, setRegisteredUsers] = useState([]);
   const [user, setUser] = useState(null);
-  const authHandler = (email) => {
-    setUser({
-      email,
-    });
+
+  const registerHandler = (email, password) => {
+    if (registeredUsers.some((user) => user.email === email)) {
+      throw new Error("Email is taken");
+    }
+
+    setRegisteredUsers((state) => [...state, { email, password }]);
+  };
+
+  const loginHandler = (email, password) => {
+    const user = registeredUsers.find(
+      (u) => u.email === email && u.password === password,
+    );
+
+    if (!user) {
+      throw new Error("Invalid username or password");
+    }
+
+    setUser(user);
   };
 
   return (
@@ -31,7 +48,7 @@ function App() {
         ></Route>
         <Route
           path="/login"
-          element={<Login user={user} onLogin={registerHandler} />}
+          element={<Login user={user} onLogin={loginHandler} />}
         ></Route>
       </Routes>
       <Footer />

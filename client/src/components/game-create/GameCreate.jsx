@@ -12,11 +12,7 @@ export default function GameCreate() {
     data.players = Number(data.players);
     data._createdOn = Date.now();
 
-    const result = await request(
-      "http://localhost:3030/jsonstore/games",
-      "POST",
-      data,
-    );
+    const result = await request("games", "POST", data);
 
     navigate("/games");
   };

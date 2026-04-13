@@ -4,7 +4,7 @@ import useForm from "../../hooks/useForm";
 export default function Register({ onRegister }) {
   const navigate = useNavigate();
 
-  const registerHandler = (values) => {
+  const registerHandler = async (values) => {
     const { email, password, confirmPassword } = values;
 
     //Validation
@@ -18,7 +18,7 @@ export default function Register({ onRegister }) {
 
     try {
       //Register User
-      onRegister(email, password);
+      await onRegister(email, password);
 
       navigate("/");
     } catch (err) {

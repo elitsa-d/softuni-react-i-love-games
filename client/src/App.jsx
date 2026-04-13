@@ -13,28 +13,25 @@ import Logout from "./components/logout/Logout";
 import Edit from "./components/edit/Edit";
 
 function App() {
-  const [registeredUsers, setRegisteredUsers] = useState([]);
   const [user, setUser] = useState(null);
 
-  const registerHandler = (email, password) => {
-    if (registeredUsers.some((user) => user.email === email)) {
-      throw new Error("Email is taken");
-    }
-
+  const registerHandler = async (email, password) => {
     const newUser = { email, password };
 
-    setRegisteredUsers((state) => {
-      return [...state, newUser];
+    const response = await fetch("http://localhost:3030/users/register", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newUser),
     });
 
-    setUser(newUser);
+    const result = await response.json();
+
+    setUser(result);
   };
 
   const loginHandler = (email, password) => {
-    const user = registeredUsers.find(
-      (u) => u.email === email && u.password === password,
-    );
-
     if (!user) {
       throw new Error("Invalid email or password");
     }

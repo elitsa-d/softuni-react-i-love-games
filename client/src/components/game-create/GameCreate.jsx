@@ -12,7 +12,7 @@ export default function GameCreate() {
       URL.revokeObjectURL(imagePreview);
       setImagePreview(null);
     };
-  }, [imageUpload, imagePreview]);
+  }, [imageUpload]);
 
   const createGameHandler = async (event) => {
     event.preventDefault();

@@ -12,22 +12,16 @@ import Login from "./components/login/Login";
 import Logout from "./components/logout/Logout";
 import Edit from "./components/edit/Edit";
 import UserContext from "./contexts/UserContext,js";
+import useRequest from "./hooks/useFetch";
 
 function App() {
   const [user, setUser] = useState(null);
+  const { request } = useRequest();
 
   const registerHandler = async (email, password) => {
     const newUser = { email, password };
 
-    const response = await fetch("http://localhost:3030/users/register", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newUser),
-    });
-
-    const result = await response.json();
+    const result = await request("/users/register", "POST", newUser);
 
     setUser(result);
   };

@@ -12,7 +12,7 @@ import Login from "./components/login/Login";
 import Logout from "./components/logout/Logout";
 import Edit from "./components/edit/Edit";
 import UserContext from "./contexts/UserContext,js";
-import useRequest from "./hooks/useFetch";
+import useRequest from "./hooks/useRequest";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,12 +26,9 @@ function App() {
     setUser(result);
   };
 
-  const loginHandler = (email, password) => {
-    if (!user) {
-      throw new Error("Invalid email or password");
-    }
-
-    setUser(user);
+  const loginHandler = async (email, password) => {
+    const result = await request("/users/login", "POST", { email, password });
+    setUser(result);
   };
 
   const logoutHandler = () => {
@@ -59,10 +56,7 @@ function App() {
         <Route path="games/:gameId/edit" element={<Edit />}></Route>
         <Route path="/games/create" element={<GameCreate />}></Route>
         <Route path="/register" element={<Register />}></Route>
-        <Route
-          path="/login"
-          element={<Login user={user} onLogin={loginHandler} />}
-        ></Route>
+        <Route path="/login" element={<Login user={user} />}></Route>
         <Route
           path="/logout"
           element={<Logout onLogout={logoutHandler} />}

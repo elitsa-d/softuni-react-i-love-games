@@ -1,13 +1,19 @@
 import { useNavigate } from "react-router";
-import { useEffect } from "react";
+import { useContext } from "react";
+import UserContext from "../../contexts/UserContext";
 
-export default function Logout({ onLogout }) {
+export default function Logout() {
+  const { logoutHandler } = useContext(UserContext);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    onLogout();
-    navigate("/");
-  }, []);
+  logoutHandler()
+    .then(() => {
+      navigate("/");
+    })
+    .catch(() => {
+      alert("Problem with logout");
+      navigate("/");
+    });
 
   return null;
 }

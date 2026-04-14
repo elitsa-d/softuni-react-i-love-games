@@ -14,7 +14,7 @@ import { useContext } from "react";
 import UserContext from "./contexts/UserContext";
 
 function App() {
-  const { user, logoutHandler } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   return (
     <>
       <Header user={user} />
@@ -29,10 +29,7 @@ function App() {
         <Route path="/games/create" element={<GameCreate />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login user={user} />}></Route>
-        <Route
-          path="/logout"
-          element={<Logout onLogout={logoutHandler} />}
-        ></Route>
+        <Route path="/logout" element={<Logout />}></Route>
       </Routes>
       <Footer />
     </>

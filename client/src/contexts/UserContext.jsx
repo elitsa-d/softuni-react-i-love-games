@@ -23,7 +23,6 @@ export function UserProvider(props) {
   const registerHandler = async (email, password) => {
     const newUser = { email, password };
     const result = await request("/users/register", "POST", newUser);
-
     setUser(result);
   };
 
@@ -33,8 +32,9 @@ export function UserProvider(props) {
   };
 
   const logoutHandler = async () => {
-    await request("/users/logout");
-    setUser(null);
+    await request("/users/logout", "GET", null, {
+      accessToken: user.accessToken,
+    }).finally(() => setUser(null));
   };
 
   const userContextValues = {

@@ -17,7 +17,7 @@ function App() {
   const { user } = useContext(UserContext);
   return (
     <>
-      <Header user={user} />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/games" element={<Catalog />}></Route>
